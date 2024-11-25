@@ -1,30 +1,116 @@
-﻿<Window x:Class="FHeinePersonligProfil.MainWindow"
+﻿<Window x:Name="FHeinePersonligeProfil"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FHeinePersonligProfil"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="FHeinePersonligeProfil.MainWindow" Height="450" Width="800">
+
+    <!--Gitter-->
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" MinWidth="148.36"/>
-            <ColumnDefinition Width="519*"/>
-            <ColumnDefinition Width="124*"/>
+            <ColumnDefinition Width="Auto" MinWidth="145.35"/>
+            <ColumnDefinition Width="520*"/>
+            <ColumnDefinition Width="125*"/>
+
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="120"/>
-            <RowDefinition Height="145"/>
-            <RowDefinition Height="145"/>
-        </Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="150."/>
 
-        <Button Margin="35"
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" FontSize="23" 
+           x:Name="Titel"
+           Text="FREDERIK HEINE WAEL" Margin="87,25,127,65" Grid.Column="1"/>
+        <TextBox FontSize="15" Grid.Row="0"
+                 x:Name="Undertitel"
+                 Text="Min Personlige Profil" Margin="139,60,222,31" Grid.Column="1"/>
+
+
+        <!--CV Button-->
+
+        <Button Grid.Row="0" Margin="35,35,35,35"
            x:Name="CV"
            Content="Se Mit CV"
-           Foreground="Blue"
-           Click="CV_Click"
+           Foreground="Blue"/>
+           <!--</Button>Click="CV_Click"-->
+           
+
+        <!--Link Buttons-->
+
+        <Button Grid.Row="2" Margin="288,8,50,-23" Grid.Column="1">
+            <StackPanel>
+                <Image Source="/Assets/Pic3.png" Height="250" Width="204"/>
+            </StackPanel>
+        </Button>
+
+
+
+        <Button Grid.Row="2"  Grid.Column="1" Margin="62,10,268,-23">
+            <StackPanel>
+                <Image Source="/Assets/Pic1.png" Height="269" Width="192" />
+                <TextBlock><Run Text="Projekt 1"/></TextBlock>
+            </StackPanel>
+        </Button>
+
+
+        <!--Stack Link Content-->
+
+        <StackPanel Grid.Row="1" Margin="0,0,1,0"/>
+        <Label
+           Content="Facebook" Grid.Row="1" Margin="40,5,55,88"
            />
-        
+        <Label
+           Content="X"
+           Grid.Row="1" Margin="57,58,83,40"/>
+        <Label
+           Content="LinkedIn"
+           Grid.Row="1" Margin="45,32,65,60"/>
+        <Label
+           Content="GitHub"
+           Grid.Row="1" Margin="45,80,65,10"/>
+
+        <!--PictureOfMe-->
+
+        <StackPanel Grid.Row="0" Grid.Column="2" >
+            <Image
+           Source="\Assets\PicOfMe.jpg" Height="167" Width="241"/>
+        </StackPanel>
+
+        <!--Scrollbar til tekst1-->
+
+        <ScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Visible"
+           ScrollBar.Scroll="100"  
+           Grid.Row="2" Margin="0,25,1,-44"
+           CanContentScroll="True"
+           Content="1. Birtday Invite" 
+        />
+        <TextBox Text="Se Projekter Fra Min Portfolio" Background="LightSkyBlue" Margin="0,0,0,125" Grid.Row="2" HorizontalAlignment="Center" Width="164"/>
+        <TextBox Text="                   Preview#1" Background="LightSkyBlue" Margin="62,4,268,130" Grid.Column="1" Grid.Row="2"/>
+        <TextBox Text="                  Preview#2" Background="LightSkyBlue" Grid.Column="1" Grid.Row="2" Margin="288,4,50,130"/>
+
+        <!-- ItemsSource="C:\Users\Bruger\OneDrive\Skrivebord\Github_repository\FHeinePersonligProfil\Assets\solution.html"/> -->
+
+        <TextBlock Name="Navn" FontSize="14" Grid.Row="1" Grid.Column="1"
+            Text="-Jeg hedder Frederik Heine Wael" Margin="103,8,165,83"
+            />
+        <TextBlock FontSize="14" Grid.Row="1" Grid.Column="1" Margin="139,37,34,55"
+            Text="-Jeg er 27 år gammel" Grid.ColumnSpan="2"
+            />
+        <TextBlock FontSize="14" Grid.Row="1"
+            Text="-Jeg uddanner mig til Softwareudvikler på Mercantec" Margin="47,65,127,25" Grid.Column="1"
+            />
+        <TextBlock FontSize="14" Grid.Row="1" Grid.Column="2" 
+            Text="-Jeg er født og opvokset i Frederikshavn"
+            />
+
+
+
     </Grid>
+
+
+
 </Window>

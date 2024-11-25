@@ -27,7 +27,45 @@ namespace FHeinePersonligProfil
 
         private void CV_Click(object sender, RoutedEventArgs e)
         {
-
+            // Opens CV 
+            WebView.Source = new Uri("https://job.jobnet.dk/CV/Frontpage?pageId=901#a5790b9f-9bd7-4079-b7c5-2e03efa2231a");
         }
+        private void Pic1_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // Show the WebView
+                WebView.Visibility = Visibility.Visible;
+
+                // Hide the ContentArea
+                ContentArea.Visibility = Visibility.Collapsed;
+
+                // Opens the source 'Github'
+                WebView.Source = new Uri("https://github.com/frederikwael/BinaryConverter.git");
+            }
+            catch (Exception ex) 
+                // Error if the link don't work
+                MessageBox.Show($"Failed to read link: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        private void Pic2_Click2(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // Content visibility
+                WebView.Visibility = Visibility.Visible;
+                ContentArea.Visibility = Visibility.Collapsed;
+               
+
+                // Opens the source 'X'
+                WebView.Source = new Uri("https://x.com/xfreddio");
+                
+                // Opens the source 'Facebook'
+                WebView.Source = new Uri("https://www.facebook.com/frederikwael?locale=da_DK");
+            }
+            catch (Exception ex)
+                // Error if the link don't work
+                MessageBox.Show($"Failed to read link: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
     }
 }
